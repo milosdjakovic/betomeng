@@ -1,0 +1,13 @@
+body {
+  /* background: url(/images/dark-leather.jpg); */
+  background: #1d1d1d;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
