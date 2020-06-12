@@ -14,7 +14,7 @@
 <script>
 import Navigation from '~/components/Navigation.vue'
 
-module.exports = {
+export default {
   components: {
     Navigation
   },

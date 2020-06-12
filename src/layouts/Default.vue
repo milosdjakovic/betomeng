@@ -1,5 +1,20 @@
 <template>
-  <div class="layout">
+  <div id="app" style="background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.3) 100%)">
+    <div class="min-h-screen text-gray-100">
+      <Header />
+
+      <main class="relative z-30 pt-16 pb-24">
+        <slot />
+      </main>
+
+      <!-- <BottomNavigation /> -->
+    </div>
+    <a
+      href="https://github.com/milosdjakovic/"
+      class="inline-block w-full py-2 mx-auto text-xs text-center text-gray-600 -pb-10 hover:text-blue-300 hover:underline"
+    >© {{ new Date().getFullYear() }}, Miloš Đakovic</a>
+  </div>
+  <!-- <div class="layout">
     <header class="header">
       <strong>
         <g-link to="/">{{ $static.metadata.siteName }}</g-link>
@@ -10,8 +25,18 @@
       </nav>
     </header>
     <slot/>
-  </div>
+  </div>-->
 </template>
+
+<script>
+import Header from "~/components/Header.vue";
+
+export default {
+  components: {
+    Header
+  }
+};
+</script>
 
 <static-query>
 query {
@@ -22,29 +47,15 @@ query {
 </static-query>
 
 <style>
+html {
+  background-image: url(~@/assets/images/dark-leather.jpg);
+  background-color: #000; 
+}
+
 body {
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  margin:0;
-  padding:0;
-  line-height: 1.5;
-}
-
-.layout {
-  max-width: 760px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  height: 80px;
-}
-
-.nav__link {
-  margin-left: 20px;
+  background-image: url(~@/assets/images/dark-leather-teal.jpg);
+  /* background-color: #6aa3ac;  */
+  /* background-blend-mode: multiply; */
+  /* background-blend-mode: hard-light; */
 }
 </style>

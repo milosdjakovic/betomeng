@@ -6,10 +6,10 @@
     :style="isPageTop && `backdrop-filter: blur(8px) brightness(90%)`"
   >
     <div class="flex justify-between flex-grow max-w-4xl">
-      <nuxt-link exact to="/" class="flex items-center">
+      <g-link exact to="/" class="flex items-center">
         <BlueRoomLogo class="h-6 sm:h-10" />
         <p class="ml-3 text-xl sm:text-2xl">Betomeng</p>
-      </nuxt-link>
+      </g-link>
 
       <div class="flex ml-8">
         <Navigation />
@@ -22,7 +22,7 @@
 import Navigation from '~/components/Navigation.vue'
 import BlueRoomLogo from '~/components/svg-vue/BlueRoomLogo.vue'
 
-module.exports = {
+export default {
   components: {
     Navigation,
     BlueRoomLogo
