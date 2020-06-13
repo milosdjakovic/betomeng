@@ -1,14 +1,14 @@
-# Default starter for Gridsome
+# Betomeng
 
-This is the project you get when you run `gridsome create new-project`.
+DJ Portfolio
 
-### 1. Install Gridsome CLI tool if you don't have
+<div style="background: black; padding: 25px 20px 20px; width: 460px">
+  <img alt="Betomeng logo" src="./src/assets/betomeng-logo.svg" width="460" />
+</div>
 
-`npm install --global @gridsome/cli`
+Built with:
+[Gridsome](https://www.gridsome.org/),
+[TailwindCSS](https://tailwindcss.com/) &
+[GreenSock](https://greensock.com/)
 
-### 2. Create a Gridsome project
-
-1. `gridsome create my-gridsome-site` to install default starter
-2. `cd my-gridsome-site` to open the folder
-3. `gridsome develop` to start a local dev server at `http://localhost:8080`
-4. Happy coding 🎉🙌
+© Milos Djakovic
