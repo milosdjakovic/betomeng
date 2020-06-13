@@ -1,5 +1,5 @@
 {
-  "name": "betomeng-gridsome",
+  "name": "betomeng",
   "private": true,
   "scripts": {
     "build": "gridsome build",

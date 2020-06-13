@@ -6,7 +6,7 @@
 
 module.exports = {
   siteName: 'Betomeng',
-  titleTemplate: '%s | Betomeng',
+  titleTemplate: 'Betomeng | %s',
   // pathPrefix: '/betomeng',
   plugins: [
     {
