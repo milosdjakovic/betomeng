@@ -1,13 +1,17 @@
 <template>
   <Layout>
     <div class="-mt-16">
-      <g-image
-        style="min-height: 80vh; max-height: 100vh; min-width: 100%"
-        class="object-cover h-96 sm:h-auto"
-        src="~/assets/images/betomeng_01.jpg"
-      />
+      <div class="overflow-hidden">
+        <g-image
+          id="hero-image"
+          style="min-height: 80vh; max-height: 100vh; min-width: 100%"
+          class="object-cover h-96 sm:h-auto"
+          src="~/assets/images/betomeng_01.jpg"
+        />
+      </div>
 
       <div
+        id="page-content"
         class="flex justify-center w-full p-8 sm:-mt-8 sm:p-20"
         style="background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)"
       >
@@ -57,51 +61,18 @@ export default {
     Soundcloud
   },
   data: () => ({
-    socialLinks: [
-      {
-        link: "https://www.facebook.com/betomengmusic/",
-        icon: "facebook",
-        label: "Betomeng"
-      },
-      {
-        link: "https://www.facebook.com/groups/electronicALmachine/",
-        icon: "facebook",
-        label: "Electronic Al Machine"
-      },
-      {
-        link: "https://www.youtube.com/user/BetomengLegoman",
-        icon: "youtube",
-        label: "Youtube"
-      },
-      {
-        link: "https://www.mixcloud.com/Betomeng",
-        icon: "mixcloud",
-        label: "Mixcloud"
-      },
-      {
-        link: "https://soundcloud.com/betomeng",
-        icon: "soundcloud",
-        label: "Soundcloud - I"
-      },
-      {
-        link: "https://soundcloud.com/betomeng-1",
-        icon: "soundcloud",
-        label: "Soundcloud - II"
-      },
-      {
-        link: "https://soundcloud.com/betomeng-2",
-        icon: "soundcloud",
-        label: "Soundcloud - III"
-      },
-      {
-        link: "https://soundcloud.com/betomengxxx",
-        icon: "soundcloud",
-        label: "Soundcloud - IV"
-      }
-    ]
+    
   }),
   computed: {
-    ...mapState(["count"])
+    ...mapState(["count", "socialLinks", "loadAnimationTimeline", "initialLoad"])
+  }, 
+  mounted() {
+    const tl = this.loadAnimationTimeline;
+
+    if (!this.initialLoad) {
+      tl.from("#hero-image", { y: "-16", opacity: 0, scale: 1.04 }, "-=0.3");
+      tl.from("#page-content", { y: "16", opacity: 0 }, "-=0.3");
+    }
   }
 };
 </script>

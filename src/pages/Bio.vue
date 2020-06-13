@@ -6,6 +6,7 @@
 
         <!-- Content -->
         <g-image
+          id="profile-image"
           style="shape-outside: circle(50%)"
           class="object-cover object-center mx-auto rounded-full md:mt-10 md:mb-10 md:ml-10 md:float-right w-84"
           src="~/assets/images/betomeng_04.jpg"
@@ -13,9 +14,19 @@
         />
 
         <div class="mt-16 text-gray-300 md:mt-12 md:mr-48">
-          <div class="flex justify-between mb-6">
-            <h1 v-if="currentLanguage === `en`" class="text-2xl">{{ siteContent.en.biography.title }}</h1>
-            <h1 v-if="currentLanguage === `rs`" class="text-2xl">{{ siteContent.rs.biography.title }}</h1>
+          <div id="page-title" class="flex justify-between mb-6">
+              <transition name="fade-up" mode="out-in">
+                <h1
+                  v-if="currentLanguage === `en`"
+                  class="text-2xl"
+                  key="title-lang-en"
+                >{{ siteContent.en.biography.title }}</h1>
+                <h1
+                  v-if="currentLanguage === `rs`"
+                  class="text-2xl"
+                  key="title-lang-rs"
+                >{{ siteContent.rs.biography.title }}</h1>
+              </transition>
 
             <div class="ml-4 text-gray-500">
               <button
@@ -32,13 +43,19 @@
             </div>
           </div>
 
-          <p v-if="currentLanguage === `en`">
-           {{siteContent.en.biography.content}}
-          </p>
-
-          <p v-if="currentLanguage === `rs`">
-            {{siteContent.rs.biography.content}}
-          </p>
+          <div id="page-content">
+            <transition name="fade-down" mode="out-in">
+              <p
+                v-if="currentLanguage === `en`"
+                key="content-lang-en"
+              >{{siteContent.en.biography.content}}</p>
+  
+              <p
+                v-if="currentLanguage === `rs`"
+                key="content-lang-rs"
+              >{{siteContent.rs.biography.content}}</p>
+            </transition>
+          </div>
         </div>
       </div>
     </div>
@@ -57,10 +74,31 @@ export default {
     siteContent
   }),
   computed: {
-    ...mapState(["currentLanguage"])
+    ...mapState(["currentLanguage", "initialLoad", "loadAnimationTimeline"])
   },
   methods: {
     ...mapMutations(["changeLanguage"])
+  },
+  mounted() {
+    const tl = this.loadAnimationTimeline;
+
+    if (!this.initialLoad) {
+      tl.from(
+        "#profile-image",
+        { x: 30, y: -30, rotate: 60, scale: 0.7, opacity: 0 },
+        "-=0.3"
+      );
+      tl.from(
+        "#page-title",
+        { x: -30, y: -30, scale: 0.7, opacity: 0 },
+        "-=0.6"
+      );
+      tl.from(
+        "#page-content",
+        { x: -30, y: 30, scale: 0.7, opacity: 0 },
+        "-=0.6"
+      );
+    }
   }
 };
 </script>
@@ -69,4 +107,25 @@ export default {
 .language-switch-button {
   @apply p-2 outline-none;
 }
+
+.fade-up-enter-active,
+.fade-up-leave-active {
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.fade-up-enter, .fade-up-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(-4px);
+}
+
+.fade-down-enter-active,
+.fade-down-leave-active {
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.fade-down-enter, .fade-down-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(4px);
+}
 </style>
+

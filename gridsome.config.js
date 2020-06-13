@@ -7,6 +7,7 @@
 module.exports = {
   siteName: 'Betomeng',
   titleTemplate: '%s | Betomeng',
+  pathPrefix: '/betomeng',
   plugins: [
     {
       use: 'gridsome-plugin-tailwindcss',
