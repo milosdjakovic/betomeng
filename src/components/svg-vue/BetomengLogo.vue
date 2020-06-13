@@ -83,5 +83,3 @@
     </g>
   </svg>
 </template>
-
-

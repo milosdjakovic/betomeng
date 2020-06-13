@@ -37,6 +37,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import socialMediaLink from "~/components/socialMediaLink.vue";
 import Facebook from "~/components/svg-vue/Facebook.vue";
 import Youtube from "~/components/svg-vue/Youtube.vue";
@@ -45,7 +46,7 @@ import Soundcloud from "~/components/svg-vue/Soundcloud.vue";
 
 export default {
   metaInfo: {
-    title: "Hello, world!"
+    title: "Home"
   },
   components: {
     // BetomengLogo
@@ -98,6 +99,9 @@ export default {
         label: "Soundcloud - IV"
       }
     ]
-  })
+  }),
+  computed: {
+    ...mapState(["count"])
+  }
 };
 </script>

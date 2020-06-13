@@ -6,7 +6,7 @@ module.exports = {
         'facebok-blue': '#1876f2',
         'youtube-red': '#f80703',
         'soundcloud-orange': '#f95502',
-        'mixcloud-purple': '#5000ff'
+        'mixcloud-purple': '#923eff'
       },
       width: {
         '72': '18rem',
