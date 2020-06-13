@@ -34,8 +34,6 @@ export default {
   mounted() {
     const tl = this.loadAnimationTimeline;
 
-      console.log(tl)
-
     if (!this.initialLoad) {
       tl.to("html", { opacity: 1 });
       tl.from("#header", { y: "-100%" });
