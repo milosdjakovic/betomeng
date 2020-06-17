@@ -60,9 +60,6 @@ export default {
     Mixcloud,
     Soundcloud
   },
-  data: () => ({
-    
-  }),
   computed: {
     ...mapState(["count", "socialLinks", "loadAnimationTimeline", "initialLoad"])
   }, 

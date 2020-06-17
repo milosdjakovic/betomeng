@@ -12,7 +12,7 @@
     <a
       href="https://github.com/milosdjakovic/"
       class="inline-block w-full py-6 mx-auto text-xs text-center text-gray-600 -pb-10 hover:text-blue-300 hover:underline"
-    >© {{ new Date().getFullYear() }}, Miloš Đakovic</a>
+    >© {{ new Date().getFullYear() }}, Miloš Đaković</a>
   </div>
 </template>
 
