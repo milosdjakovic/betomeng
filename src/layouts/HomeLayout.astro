@@ -1,7 +1,7 @@
 ---
 import type { Language } from "src/bin/types";
 import { Icon } from "astro-icon";
-import { Picture } from "astro-imagetools/components";
+import { Picture, Img, BackgroundImage } from "astro-imagetools/components";
 
 import socialMediaLinks from "../data/social-media-links.json";
 
@@ -16,20 +16,24 @@ const { language } = Astro.props;
   <Picture
     src="/images/betomeng-hero.jpg"
     alt="Betomeng performing at a Drugstore night club"
-    artDirectives={[
-      {
-        src: "/images/betomeng-hero.jpg",
-        media: "(orientation: potrait)",
+    attributes={{
+      picture: {
+        id: "hero-image",
+        style: "min-width: 100%",
       },
-    ]}
+      img: {
+        class: "object-cover h-96 sm:h-auto",
+        style: "min-height: 80vh; max-height: 100vh; min-width: 100%",
+      },
+    }}
   />
 
   <div
     id="page-content"
-    class="flex justify-center w-full p-8 sm:-mt-8 sm:p-20"
+    class="flex justify-center w-full px-8 sm:px-20 -mt-8 pt-20 pb-28 lg:pt-60 lg:pb-80"
     style={{
       background:
-        "linear-gradient(180deg, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%)",
+        "linear-gradient(180deg, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 100%)",
     }}
   >
     <div class="grid grid-cols-1 overflow-auto sm:grid-cols-2">
