@@ -1,21 +1,56 @@
 ---
 export interface Props {
   title: string;
+  page: string;
 }
 
-const { title } = Astro.props;
+const { title, page } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html
+  lang="en"
+  class="bg-black opacity-0"
+  style={{ backgroundImage: "url(/images/dark-leather-teal.jpg)" }}
+>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>{title} - {page}</title>
   </head>
-  <body>
-    <slot />
+
+  <body
+    style={{ backgroundImage: "url(~@/assets/images/dark-leather-teal.jpg)" }}
+  >
+    <div class="min-h-screen text-gray-100">
+      <p>HEADER</p>
+
+      <main class="relative z-30 pt-16 pb-24 mt-16">
+        <slot />
+      </main>
+
+      <a
+        href="https://github.com/milosdjakovic/"
+        class="inline-block w-full py-6 mx-auto text-xs text-center text-gray-600 -pb-10 hover:text-blue-300 hover:underline"
+      >
+        © {new Date().getFullYear()}, Miloš Đaković
+      </a>
+    </div>
   </body>
+
+  <script>
+    import gsap from "gsap";
+
+    const tl = gsap.timeline({
+      defaults: { duration: 0.6, ease: "elastic.inOut(0.4 , 0.8)" },
+    });
+
+    tl.to("html", { opacity: 1 });
+    tl.from("#header", { y: "-100%" });
+    tl.from("#header-blue-room-logo", { rotate: 360 }, "-=0.5");
+    tl.from("#header-title", {}, "-=0.6");
+    tl.from(".fall-down", { y: "-4rem", stagger: 0.13 }, "-=0.6");
+  </script>
 </html>
