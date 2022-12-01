@@ -1,7 +1,10 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Welcome to Astro.">
-  <main></main>
-</BaseLayout>
+<script>
+  import type { Language } from "../bin/types";
+  import { getLanguage } from "../bin/language";
+
+  const language: Language = getLanguage() ?? "en";
+  location.href = `${language}/`;
+</script>
