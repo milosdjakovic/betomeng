@@ -1,0 +1,32 @@
+{
+  "navigation": {
+    "home": {
+      "en": "Home",
+      "rs": "Početna"
+    },
+    "biography": {
+      "en": "Bio",
+      "rs": "Bio"
+    }
+  },
+  "page": {
+    "biography": {
+      "en": {
+        "title": "Biography",
+        "content": "My name is Ivica Ljubic and I have been a professional DJ for 20 years (since I was 19) performing under the alias of DJ Betomeng, my interests and activities in this field are not limited to only one practical side of performing, my interests span across various aspects of music and it’s development during its history. I am fully committed to this sphere of life which is in my case far more plentiful than my financial merit would allow me to which is the primary moving force of my life and style. I try to perfect and excel in this domain. Given my current experience, I have acquired the skills and the right mindset to adjust my musical repertoire to the imminent atmosphere and energy to which I am exposed to at the moment and I reflect it towards the crowd’s wishes, thus enabling me to never rigidly cling to only one musical genre, but to take the energy and dynamics of my performance and synchronize it with the current moment. Variability and improvisation are also dictated at any given moment."
+      },
+      "rs": {
+        "title": "Biografija",
+        "content": "Moje ime je Ivica Ljubić i profesionalno se bavim DJ-ingom već 20 godina (od svoje 19. godine) nastupajući pod alijasom DJ Betomeng, moje interesovanje i aktivnost u ovoj oblasti nisu ograničeni samo na praktičnu stranu nastupanja, zanimaju me različiti aspekti muzike i njen razvoj tokom istorije. Potpuno sam posvećen ovoj sferi života koja je, u mom slučaju, daleko od modela finansijskog funkcionisanja, već primarno sam stil i način života. Trudim se da se usavršavam i napredujem u tom domenu. Na osnovu dosadašnjeg iskustva, stekao sam veštinu i osećaj da prilagođavam muzički repertoar trenutnoj atmosferi i energiji kojom sam okružen i po potrebi željama publike, tako da se nikada rigidno ne pridržavam jednog muzičkog žanra, već je energija i dinamika nastupa usaglašena sa postojećim trenutkom. Varijabilnost i improvizacija su takođe uslovljeni dobom dana."
+      }
+    },
+    "error": {
+      "en": {
+        "content": "Page not found"
+      },
+      "rs": {
+        "content": "Stranica ne postoji"
+      }
+    }
+  }
+}
