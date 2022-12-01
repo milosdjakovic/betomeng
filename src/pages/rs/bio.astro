@@ -1,0 +1,13 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+import type { Language } from "src/bin/types";
+
+import i18n from "../../data/i18n-data.json";
+
+const language: Language = "rs";
+---
+
+<BaseLayout title="Betomeng" page={i18n.navigation.biography[language]}>
+  <h1>Biography (rs)</h1>
+</BaseLayout>
