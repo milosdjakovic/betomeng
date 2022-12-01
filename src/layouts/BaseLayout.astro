@@ -1,12 +1,14 @@
 ---
 import Header from "@components/Header.astro";
+import type { Language } from "src/bin/types";
 
 export interface Props {
+  language: Language;
   title: string;
   page: string;
 }
 
-const { title, page } = Astro.props;
+const { language, title, page } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -27,7 +29,7 @@ const { title, page } = Astro.props;
     style={{ backgroundImage: "url(~@/assets/images/dark-leather-teal.jpg)" }}
   >
     <div class="min-h-screen text-gray-100">
-      <Header />
+      <Header language={language} />
 
       <main class="relative z-30">
         <slot />

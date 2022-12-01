@@ -8,7 +8,11 @@ import i18n from "../../data/i18n-data.json";
 const language: Language = "rs";
 ---
 
-<BaseLayout title="Betomeng" page={i18n.navigation.home[language]}>
+<BaseLayout
+  title="Betomeng"
+  page={i18n.navigation.home[language]}
+  language={language}
+>
   <HomeLayout language={language}>
     <h1>Betomeng (rs)</h1>
   </HomeLayout>

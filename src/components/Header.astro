@@ -1,6 +1,15 @@
 ---
-import { Icon } from "astro-icon";
 import Navigation from "./Navigation.astro";
+
+import type { Language } from "src/bin/types";
+
+import { Icon } from "astro-icon";
+
+export interface Props {
+  language: Language;
+}
+
+const { language } = Astro.props;
 ---
 
 <header
@@ -24,7 +33,7 @@ import Navigation from "./Navigation.astro";
     </a>
 
     <div id="header-navigation" class="flex ml-8">
-      <Navigation />
+      <Navigation language={language} />
     </div>
   </div>
 </header>
