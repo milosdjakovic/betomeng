@@ -1,0 +1,50 @@
+---
+import type { Language } from "src/bin/types";
+
+import { Picture } from "astro-imagetools/components";
+
+export interface Props {
+  language: Language;
+}
+
+const { language } = Astro.props;
+---
+
+<div class="overflow-hidden">
+  <Picture
+    src="/images/betomeng-hero.jpg"
+    alt="Betomeng performing at a Drugstore night club"
+    attributes={{
+      picture: {
+        id: "hero-image",
+        style: "min-width: 100%",
+      },
+      img: {
+        class: "object-cover h-96 sm:h-auto",
+        style: "min-height: 80vh; max-height: 100vh; min-width: 100%",
+      },
+    }}
+  />
+
+  <div
+    id="page-content"
+    class="flex justify-center w-full px-8 sm:px-20 -mt-8 pb-28 lg:pt-36 lg:pb-56"
+    style={{
+      background:
+        "linear-gradient(180deg, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 100%)",
+    }}
+  >
+    <div class="grid grid-cols-1 overflow-auto sm:grid-cols-2"></div>
+  </div>
+</div>
+
+<script>
+  import gsap from "gsap";
+
+  const tl = gsap.timeline({
+    defaults: { duration: 0.6, ease: "elastic.inOut(0.4 , 0.8)" },
+  });
+
+  tl.from("#hero-image", { y: "-16", opacity: 0, scale: 1.04 }, "-=0.3");
+  tl.from("#page-content", { y: "16", opacity: 0 }, "-=0.3");
+</script>
