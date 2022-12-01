@@ -1,0 +1,32 @@
+---
+---
+
+<header
+  id="header"
+  class:list={[
+    "fixed inset-x-0 top-0 z-40 flex justify-center h-16 px-4 sm:px-20",
+  ]}
+  style={{
+    transition: "background 300ms, shadown 300ms, backdrop-filter 300ms",
+  }}
+>
+  TEST
+</header>
+
+<script>
+  const header: HTMLElement = document.querySelector("header")!;
+
+  function handleHeaderStyles(header: HTMLElement) {
+    let pageScrollPositionTop = window.scrollY === 0;
+
+    if (pageScrollPositionTop) {
+      header.classList.remove("bg-gray-900", "bg-opacity-50", "shadow-md");
+    } else {
+      header.classList.add("bg-gray-900", "bg-opacity-50", "shadow-md");
+    }
+  }
+
+  window.addEventListener("scroll", () => handleHeaderStyles(header));
+
+  handleHeaderStyles(header);
+</script>
