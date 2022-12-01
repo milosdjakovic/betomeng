@@ -4,13 +4,19 @@
       "en": "Home",
       "rs": "Početna"
     },
-    "path": "/"
+    "path": {
+      "en": "/",
+      "rs": "/"
+    }
   },
   {
     "label": {
       "en": "Bio",
       "rs": "Bio"
     },
-    "path": "/biography"
+    "path": {
+      "en": "/biography",
+      "rs": "/biografija"
+    }
   }
 ]

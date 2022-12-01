@@ -18,7 +18,7 @@ const { language } = Astro.props;
 <nav class="flex flex-row">
   {
     routes.map(({ path, label }) => {
-      const wholePath: string = `${language}${path}`;
+      const wholePath: string = `${language}${path[language]}`;
 
       return (
         <a
