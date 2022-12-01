@@ -1,0 +1,16 @@
+[
+  {
+    "label": {
+      "en": "Home",
+      "rs": "Početna"
+    },
+    "path": "/"
+  },
+  {
+    "label": {
+      "en": "Bio",
+      "rs": "Bio"
+    },
+    "path": "/bio"
+  }
+]
