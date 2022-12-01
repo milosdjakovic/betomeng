@@ -1,4 +1,6 @@
 ---
+import Header from "@components/Header.astro";
+
 export interface Props {
   title: string;
   page: string;
@@ -25,9 +27,9 @@ const { title, page } = Astro.props;
     style={{ backgroundImage: "url(~@/assets/images/dark-leather-teal.jpg)" }}
   >
     <div class="min-h-screen text-gray-100">
-      <p>HEADER</p>
+      <Header />
 
-      <main class="relative z-30 pt-16 pb-24 mt-16">
+      <main class="relative z-30 pb-24">
         <slot />
       </main>
 
