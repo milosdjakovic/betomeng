@@ -1,0 +1,57 @@
+---
+import type { Language } from "src/bin/types";
+import { getLanguage } from "src/bin/language";
+
+import routes from "../data/routes.json";
+
+const url = new URL(Astro.request.url);
+const pathname = url.pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
+
+const language: Language = getLanguage();
+---
+
+<nav class="flex flex-row">
+  {
+    routes.map(({ path, label }) => {
+      const wholePath: string = `${language}${path}`;
+
+      return (
+        <a
+          href={path}
+          class:list={[
+            "fall-down nav-link",
+            { "nav-link__active": currentPath === wholePath },
+          ]}
+        >
+          {label[language]}
+        </a>
+      );
+    })
+  }
+</nav>
+
+<style>
+  .nav-link {
+    @apply flex items-center px-4;
+    transition: background 280ms;
+  }
+
+  .nav-link:not(.nav-link__active):hover {
+    @apply bg-blue-200 bg-opacity-25;
+  }
+
+  .nav-link__active {
+    @apply text-gray-900 bg-blue-200;
+  }
+
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+    transform: translateY(-7px);
+  }
+</style>
