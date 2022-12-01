@@ -1,7 +1,8 @@
 ---
 import type { Language } from "src/bin/types";
+
 import { Icon } from "astro-icon";
-import { Picture, Img, BackgroundImage } from "astro-imagetools/components";
+import { Picture } from "astro-imagetools/components";
 
 import socialMediaLinks from "../data/social-media-links.json";
 
@@ -30,7 +31,7 @@ const { language } = Astro.props;
 
   <div
     id="page-content"
-    class="flex justify-center w-full px-8 sm:px-20 -mt-8  pb-28 lg:pt-36 lg:pb-56"
+    class="flex justify-center w-full px-8 sm:px-20 -mt-8 pb-28 lg:pt-36 lg:pb-56"
     style={{
       background:
         "linear-gradient(180deg, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 100%)",
