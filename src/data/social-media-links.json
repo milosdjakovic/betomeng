@@ -1,0 +1,42 @@
+[
+  {
+    "url": "https://www.facebook.com/betomengmusic/",
+    "icon": "facebook-logo",
+    "label": "Betomeng"
+  },
+  {
+    "url": "https://www.facebook.com/groups/electronicALmachine/",
+    "icon": "facebook-logo",
+    "label": "Electronic Al Machine"
+  },
+  {
+    "url": "https://www.youtube.com/user/BetomengLegoman",
+    "icon": "youtube-logo",
+    "label": "Youtube"
+  },
+  {
+    "url": "https://www.mixcloud.com/Betomeng",
+    "icon": "mixcloud-logo",
+    "label": "Mixcloud"
+  },
+  {
+    "url": "https://soundcloud.com/betomeng",
+    "icon": "soundcloud-logo",
+    "label": "Soundcloud - I"
+  },
+  {
+    "url": "https://soundcloud.com/betomeng-1",
+    "icon": "soundcloud-logo",
+    "label": "Soundcloud - II"
+  },
+  {
+    "url": "https://soundcloud.com/betomeng-2",
+    "icon": "soundcloud-logo",
+    "label": "Soundcloud - III"
+  },
+  {
+    "url": "https://soundcloud.com/betomengxxx",
+    "icon": "soundcloud-logo",
+    "label": "Soundcloud - IV"
+  }
+]
