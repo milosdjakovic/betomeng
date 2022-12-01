@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import BiographyLayout from "@layouts/BiographyLayout.astro";
 
 import type { Language } from "src/bin/types";
 
@@ -13,5 +14,5 @@ const language: Language = "rs";
   page={i18n.navigation.biography[language]}
   language={language}
 >
-  <h1>Biography (rs)</h1>
+  <BiographyLayout language={language} />
 </BaseLayout>
