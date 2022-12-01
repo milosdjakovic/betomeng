@@ -5,6 +5,7 @@
   clip-rule="evenodd"
   stroke-linejoin="round"
   stroke-miterlimit="2"
+  style="height: 100%"
 >
   <path fill="#3b6793" d="M0 227.095258L393 .004531v457.0008L0 684.096058z" />
   <path
