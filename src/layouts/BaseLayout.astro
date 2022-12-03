@@ -48,6 +48,9 @@ const { language, title, page } = Astro.props;
   <script>
     import gsap from "gsap";
 
+    import { getLanguage, setLanguage } from "src/bin/language";
+    import type { Language } from "src/bin/types";
+
     const tl = gsap.timeline({
       defaults: { duration: 0.6, ease: "elastic.inOut(0.4 , 0.8)" },
     });
@@ -57,5 +60,10 @@ const { language, title, page } = Astro.props;
     tl.from("#header-blue-room-logo", { rotate: 360 }, "-=0.5");
     tl.from("#header-title", {}, "-=0.6");
     tl.from(".fall-down", { y: "-4rem", stagger: 0.13 }, "-=0.6");
+
+    // Initialize local storage if no values are present
+    setLanguage(getLanguage());
+    window.localStorage.getItem("last-visited-page") ??
+      window.localStorage.setItem("last-visited-page", "/");
   </script>
 </html>
