@@ -6,5 +6,8 @@
   import { getLanguage } from "../bin/language";
 
   const language: Language = getLanguage() ?? "en";
-  location.href = `${language}/`;
+  const lastVisitedPath: string =
+    window.localStorage.getItem("last-visited-path") ?? "/";
+
+  location.href = `${language}${lastVisitedPath}`;
 </script>
