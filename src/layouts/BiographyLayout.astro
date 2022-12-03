@@ -3,6 +3,8 @@ import type { Language } from "src/bin/types";
 
 import { Picture } from "astro-imagetools/components";
 
+import i18n from "../data/i18n-data.json";
+
 export interface Props {
   language: Language;
 }
@@ -10,31 +12,57 @@ export interface Props {
 const { language } = Astro.props;
 ---
 
-<div class="overflow-hidden">
-  <Picture
-    src="/images/betomeng-hero.jpg"
-    alt="Betomeng performing at a Drugstore night club"
-    attributes={{
-      picture: {
-        id: "hero-image",
-        style: "min-width: 100%",
-      },
-      img: {
-        class: "object-cover h-96 sm:h-auto",
-        style: "min-height: 80vh; max-height: 100vh; min-width: 100%",
-      },
-    }}
-  />
+<div class="flex justify-center p-8 sm:p-20">
+  <div class="flex-grow max-w-4xl">
+    <Picture
+      src="/images/betomeng-profile.jpg"
+      alt="Betomeng performing at a night club"
+      placeholder="none"
+      attributes={{
+        picture: {
+          id: "profile-image",
+          class:
+            "object-cover object-center mx-auto rounded-full md:mt-10 md:mb-10 md:ml-10 md:float-right w-84",
+        },
+        img: {
+          class:
+            "object-cover object-center mx-auto rounded-full md:mt-10 md:mb-10 md:ml-10 md:float-right w-84",
+          style: "shape-outside: circle(50%)",
+        },
+      }}
+    />
 
-  <div
-    id="page-content"
-    class="flex justify-center w-full px-8 sm:px-20 -mt-8 pb-28 lg:pt-36 lg:pb-56"
-    style={{
-      background:
-        "linear-gradient(180deg, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 100%)",
-    }}
-  >
-    <div class="grid grid-cols-1 overflow-auto sm:grid-cols-2"></div>
+    <div class="mt-16 text-gray-300 md:mt-12 md:mr-48">
+      <div id="page-title" class="flex justify-between mb-6">
+        <h1 class="text-2xl">{i18n.page.biography.title[language]}</h1>
+
+        <div class="ml-4 text-gray-500">
+          <a
+            href="/en/biography"
+            class:list={[
+              "language-switch-button",
+              { "text-blue-400": language === "en" },
+            ]}
+          >
+            EN
+          </a>
+          /
+          <a
+            href="/rs/biografija"
+            class:list={[
+              "language-switch-button",
+              { "text-blue-400": language === "rs" },
+            ]}
+          >
+            RS
+          </a>
+        </div>
+      </div>
+
+      <div id="page-content">
+        <p>{i18n.page.biography.content[language]}</p>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -48,3 +76,29 @@ const { language } = Astro.props;
   tl.from("#hero-image", { y: "-16", opacity: 0, scale: 1.04 }, "-=0.3");
   tl.from("#page-content", { y: "16", opacity: 0 }, "-=0.3");
 </script>
+
+<style scoped lang="postcss">
+  .language-switch-button {
+    @apply p-2 outline-none;
+  }
+
+  .fade-up-enter-active,
+  .fade-up-leave-active {
+    transition: opacity 0.3s, transform 0.3s;
+  }
+
+  .fade-up-enter, .fade-up-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  .fade-down-enter-active,
+  .fade-down-leave-active {
+    transition: opacity 0.3s, transform 0.3s;
+  }
+
+  .fade-down-enter, .fade-down-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+</style>
