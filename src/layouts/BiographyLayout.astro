@@ -1,7 +1,8 @@
 ---
-import type { Language } from "src/bin/types";
-
 import { Picture } from "astro-imagetools/components";
+
+import type { Language } from "src/bin/types";
+import { setLanguage } from "src/bin/language";
 
 import i18n from "../data/i18n-data.json";
 
@@ -35,7 +36,6 @@ const { language } = Astro.props;
     <div class="mt-16 text-gray-300 md:mt-12 md:mr-48">
       <div id="page-title" class="flex justify-between mb-6">
         <h1 class="text-2xl">{i18n.page.biography.title[language]}</h1>
-
         <div class="ml-4 text-gray-500">
           <a
             href="/en/biography"
@@ -43,6 +43,7 @@ const { language } = Astro.props;
               "language-switch-button",
               { "text-blue-400": language === "en" },
             ]}
+            onclick="window.localStorage.setItem('language', 'en')"
           >
             EN
           </a>
@@ -53,6 +54,7 @@ const { language } = Astro.props;
               "language-switch-button",
               { "text-blue-400": language === "rs" },
             ]}
+            onclick="window.localStorage.setItem('language', 'rs')"
           >
             RS
           </a>
