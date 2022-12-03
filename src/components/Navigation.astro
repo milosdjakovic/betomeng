@@ -27,6 +27,7 @@ const { language } = Astro.props;
             "fall-down nav-link",
             { "nav-link__active": currentPath === wholePath },
           ]}
+          onclick={`window.localStorage.setItem('last-visited-path', '${path[language]}')`}
         >
           {label[language]}
         </a>
