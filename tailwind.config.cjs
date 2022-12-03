@@ -9,6 +9,11 @@ module.exports = {
         "soundcloud-orange": "#f95502",
         "mixcloud-purple": "#923eff",
       },
+      width: {
+        72: "18rem",
+        84: "21rem",
+        96: "24rem",
+      },
       height: {
         72: "18rem",
         84: "21rem",
