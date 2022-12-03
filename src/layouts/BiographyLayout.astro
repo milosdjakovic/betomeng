@@ -43,7 +43,7 @@ const { language } = Astro.props;
               "language-switch-button",
               { "text-blue-400": language === "en" },
             ]}
-            onclick="window.localStorage.setItem('language', 'en')"
+            onclick="window.localStorage.setItem('language', 'en'); window.localStorage.setItem('last-visited-page', '/biography');"
           >
             EN
           </a>
@@ -54,7 +54,7 @@ const { language } = Astro.props;
               "language-switch-button",
               { "text-blue-400": language === "rs" },
             ]}
-            onclick="window.localStorage.setItem('language', 'rs')"
+            onclick="window.localStorage.setItem('language', 'rs'); window.localStorage.setItem('last-visited-page', '/biografija');"
           >
             RS
           </a>
