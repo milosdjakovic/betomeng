@@ -7,7 +7,7 @@
 
   const language: Language = getLanguage() ?? "en";
   const lastVisitedPath: string =
-    window.localStorage.getItem("last-visited-path") ?? "/";
+    window.localStorage.getItem("last-visited-page") ?? "/";
 
   location.href = `${language}${lastVisitedPath}`;
 </script>
