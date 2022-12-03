@@ -26,22 +26,23 @@ const { language, title, page } = Astro.props;
   </head>
 
   <body
+    class="relative"
     style={{ backgroundImage: "url(~@/assets/images/dark-leather-teal.jpg)" }}
   >
-    <div class="min-h-screen text-gray-100">
+    <div class="min-h-screen text-gray-100 pb-12">
       <Header language={language} />
 
       <main class="relative z-30">
         <slot />
       </main>
-
-      <a
-        href="https://github.com/milosdjakovic/"
-        class="inline-block w-full py-6 mx-auto text-xs text-center text-gray-400 -pb-10 hover:text-blue-300 hover:underline"
-      >
-        © {new Date().getFullYear()}, Miloš Đaković
-      </a>
     </div>
+
+    <a
+      href="https://github.com/milosdjakovic/"
+      class="absolute h-12 flex items-center justify-center bottom-0 w-full mx-auto text-xs text-center text-gray-400 -pb-10 hover:text-blue-300 hover:underline"
+    >
+      © {new Date().getFullYear()}, Miloš Đaković
+    </a>
   </body>
 
   <script>
