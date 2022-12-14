@@ -18,18 +18,15 @@ const { language } = Astro.props;
     <Picture
       src="/images/betomeng-profile.jpg"
       alt="Betomeng performing at a night club"
-      placeholder="none"
+      placeholder="tracedSVG"
       attributes={{
         picture: {
           id: "profile-image",
           class:
-            "object-cover object-center mx-auto rounded-full md:mt-10 md:mb-10 md:ml-10 md:float-right w-84",
-        },
-        img: {
-          class:
-            "object-cover object-center mx-auto rounded-full md:mt-10 md:mb-10 md:ml-10 md:float-right w-84",
+            "overflow-hidden object-cover object-center mx-auto rounded-full md:mt-10 md:mb-10 md:ml-10 md:float-right w-84",
           style: "shape-outside: circle(50%)",
         },
+        img: {},
       }}
     />
 
