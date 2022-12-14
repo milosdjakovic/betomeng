@@ -1,0 +1,25 @@
+---
+---
+
+<website-copyright>
+  <a
+    href="https://github.com/milosdjakovic/"
+    class="absolute h-12 flex items-center justify-center bottom-0 w-full mx-auto text-xs text-center text-gray-400 -pb-10 hover:text-blue-300 hover:underline"
+  >
+    © <span id="copuright-date">{new Date().getFullYear()}</span>, Miloš Đaković
+  </a>
+</website-copyright>
+
+<script>
+  class Copyright extends HTMLElement {
+    constructor() {
+      super();
+      const copyrightDateElement: HTMLSpanElement =
+        this.querySelector("#copuright-date")!;
+
+      copyrightDateElement.textContent = new Date().getFullYear().toString();
+    }
+  }
+
+  customElements.define("website-copyright", Copyright);
+</script>
