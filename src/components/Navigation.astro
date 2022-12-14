@@ -24,8 +24,11 @@ const { language } = Astro.props;
         <a
           href={`/${wholePath}`}
           class:list={[
-            "fall-down nav-link",
-            { "nav-link__active": currentPath === wholePath },
+            "flex items-center px-4 hover:bg-blue-200 hover:bg-opacity-25 transition-colors duration-250",
+            {
+              "text-gray-900 bg-blue-200 hover:bg-opacity-100":
+                currentPath === wholePath,
+            },
           ]}
           onclick={`window.localStorage.setItem('last-visited-page', '${path[language]}')`}
         >
@@ -35,28 +38,3 @@ const { language } = Astro.props;
     })
   }
 </nav>
-
-<style>
-  .nav-link {
-    @apply flex items-center px-4;
-    transition: background 280ms;
-  }
-
-  .nav-link:not(.nav-link__active):hover {
-    @apply bg-blue-200 bg-opacity-25;
-  }
-
-  .nav-link__active {
-    @apply text-gray-900 bg-blue-200;
-  }
-
-  .fade-enter-active,
-  .fade-leave-active {
-    transition: opacity 0.3s, transform 0.3s;
-  }
-  .fade-enter,
-  .fade-leave-to {
-    opacity: 0;
-    transform: translateY(-7px);
-  }
-</style>
