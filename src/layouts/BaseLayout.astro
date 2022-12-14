@@ -14,7 +14,7 @@ const { language, title, page } = Astro.props;
 <!DOCTYPE html>
 <html
   lang="en"
-  class="bg-black opacity-0"
+  class="bg-black"
   style={{ backgroundImage: "url(/images/dark-leather-teal.jpg)" }}
 >
   <head>
@@ -41,29 +41,8 @@ const { language, title, page } = Astro.props;
       href="https://github.com/milosdjakovic/"
       class="absolute h-12 flex items-center justify-center bottom-0 w-full mx-auto text-xs text-center text-gray-400 -pb-10 hover:text-blue-300 hover:underline"
     >
-      © {new Date().getFullYear()}, Miloš Đaković
+      © <span id="copuright-date">{new Date().getFullYear()}</span>, Miloš
+      Đaković
     </a>
   </body>
-
-  <script>
-    import gsap from "gsap";
-
-    import { getLanguage, setLanguage } from "src/bin/language";
-    import type { Language } from "src/bin/types";
-
-    const tl = gsap.timeline({
-      defaults: { duration: 0.6, ease: "elastic.inOut(0.4 , 0.8)" },
-    });
-
-    tl.to("html", { opacity: 1 });
-    tl.from("#header", { y: "-100%" });
-    tl.from("#header-blue-room-logo", { rotate: 360 }, "-=0.5");
-    tl.from("#header-title", {}, "-=0.6");
-    tl.from(".fall-down", { y: "-4rem", stagger: 0.13 }, "-=0.6");
-
-    // Initialize local storage if no values are present
-    setLanguage(getLanguage());
-    window.localStorage.getItem("last-visited-page") ??
-      window.localStorage.setItem("last-visited-page", "/");
-  </script>
 </html>
